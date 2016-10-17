@@ -1,0 +1,1 @@
+this is a cordova mobile app.
