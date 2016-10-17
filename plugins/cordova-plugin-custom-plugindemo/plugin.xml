@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-custom-plugindemo"
+    version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>pluginDemo</name>
+    <author>Stephen Wei</author>
+    <description>This is a custom cordova plugin demo.</description>
+    <!--对应指定的js模块，大部分插件至少包含一个js文件，
+        name:js模块名，可随便取；src: 插件js模块相对路径-->
+    <js-module name="pluginDemo" src="www/pluginDemo.js">
+        <!--clobbers:用来说明“module.exports= target值”添加到window中的js对象，
+        让插件方法能够在窗口级别使用，H5通过它调用插件的方法，可以配置多个 -->
+        <clobbers target="demo" />
+    </js-module>
+
+    <!-- android 平台 -->
+    <platform name="android">
+        <!-- 配置信息 -->
+        <config-file parent="/*" target="res/xml/config.xml">
+            <!-- name:插件Native接口对象，插件js模块中通过它调用java方法 -->
+            <feature name="PluginDemo">
+                <!-- value:插件java包类全路径(后面跟类名) -->
+                <param name="android-package" value="com.stephen.plugin.plugindemo.pluginDemo" />
+            </feature>
+        </config-file>
+        <!-- 添加相关权限 -->
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+
+        <!-- src: 插件Native java模块相对路径；
+        target-dir:插件Native java模块复制到项目中该源码路径,同上面java包类路径一样 -->
+        <source-file src="src/android/pluginDemo.java"
+            target-dir="src/com/stephen/plugin/plugindemo" />
+    </platform>
+</plugin>

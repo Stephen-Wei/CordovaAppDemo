@@ -45,3 +45,26 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# =========== Android ==============
+# dependencies
+node_modules
+
+platforms/android/.gradle
+platforms/android/.idea
+platforms/android/assets/www
+
+# platforms/android/ant-build
+# platforms/android/ant-gen
+# platforms/android/bin
+platforms/android/build
+
+# platforms/android/gen
+# platforms/android/CordovaLib/ant-build
+# platforms/android/CordovaLib/ant-gen
+# platforms/android/CordovaLib/bin
+platforms/android/CordovaLib/build
+
+# platforms/android/CordovaLib/gen
+platforms/android/CordovaLib/local.properties
+platforms/android/local.properties
