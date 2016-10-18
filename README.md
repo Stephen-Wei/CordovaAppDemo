@@ -1,5 +1,6 @@
 #Cordova Mobile Application
 基于Cordova的安卓应用，使用Android Studio开发，学习cordova项目。
+
 ![logo](https://github.com/Stephen-Wei/CordovaAppDemo/blob/master/www/img/logo.png "logo")
 
 ##功能介绍
