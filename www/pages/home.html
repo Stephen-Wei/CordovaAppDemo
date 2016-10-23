@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<!-- 白名单制度 -->
-	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-	<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
-	<meta name="format-detection" content="telphone=no, email=no" />
-	<link rel="stylesheet" href="css/home.css">
-	<title>Simple Cordova Project</title>
-
+  <meta charset="UTF-8">
+  <!-- 白名单制度 -->
+<!--   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <!-- Angular Material <s></s>tyle sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <title>Simple Cordova Project</title>
 </head>
-<body>
-	
+<body ng-app="MyApp" ng-cloak>
+  <!-- Your HTML content here  -->  
+  <div ng-controller="AppCtrl" ng-cloak class="app">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <!-- <md-button aria-label="Go Back">Go Back</md-button> -->
+        <h1>
+          <span>Toolbar with Standard Buttons</span>
+        </h1>
+      <!--         <span flex></span>
+      <md-button class="md-raised" aria-label="Learn More">
+        Learn More
+      </md-button>
+      <md-button class="md-fab md-mini" aria-label="Favorite">
+        <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+      </md-button> -->
+      </div>
+    </md-toolbar>
+    
+    <md-content>
+      <md-list flex>
+        <!-- <md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader> -->
+        <md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="null">
+          <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+          <div class="md-list-item-text" layout="column" ng-click="clickItem($index)">
+            <h3>{{ item.who }}</h3>
+            <h4>{{ item.what }}</h4>
+            <p>{{ item.notes }}</p>
+          </div>
+        </md-list-item>    
+      </md-list>
+    </md-content>
+  </div>
 
-	
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript" src="../js/home.js"></script>
+  
 </body>
 </html>

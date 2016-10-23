@@ -17,10 +17,10 @@
     <description>
         A sample Apache Cordova application.
     </description>
-    <author email="stephen62622@gmail.com" href="http://cordova.io">
+    <author email="stephen62622@gmail.com" href="https://github.com/Stephen-Wei">
         Stephen.Wei
     </author>
-    <content src="index.html" />
+    <content src="pages/home.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

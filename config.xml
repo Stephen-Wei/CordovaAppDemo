@@ -7,7 +7,7 @@
     <author email="stephen62622@gmail.com" href="https://github.com/Stephen-Wei">
         Stephen.Wei
     </author>
-    <content src="index.html" />>
+    <content src="pages/home.html" />>
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
 
